@@ -11,8 +11,13 @@ export class MessagesService {
   async createMessage({ author, message }: CreateMessageDto) {
     const id = mockDatabase.length + 1;
     const newMessage = { id, author, message };
-    console.log(mockDatabase);
+
     mockDatabase.push(newMessage);
+
+    return newMessage;
+  }
+
+  async getAllMessage() {
     return mockDatabase;
   }
 }
